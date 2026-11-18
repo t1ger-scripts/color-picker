@@ -1,0 +1,134 @@
+.color-picker  {
+    position: relative;
+
+    &__preview {
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+    }
+
+    &__popup {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 10px;
+        padding: 16px;
+        width: 260px;
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        
+        p {
+            margin: 0 0 10px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 8px;
+    }
+
+    &__swatch {
+        width: 100%;
+        aspect-ratio: 1;
+        padding: 0;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+            outline: 2px solid #333333;
+        }
+    }
+
+    &__shapes {
+        margin-top: 16px;
+        border-top: 1px solid #dddddd;
+        padding-top: 12px;
+    }
+
+    &__shape-button {
+        width: 28px;
+        height: 28px;
+        padding: 0;
+        margin-right: 10px;
+        background-color: #555555;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            outline: 2px solid #333333;
+            outline-offset: 3px;
+        }
+    }
+
+    &__swatch,
+    &__shape-button {
+        &.is-selected {
+            outline: 2px solid #333333;
+            outline-offset: 2px;
+        }
+    }
+
+    &__hex {
+        margin-top: 16px;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+
+    &__hex-input {
+        display: flex;
+        gap: 8px;
+
+        input {
+            width: 100%;
+            min-width: 0;
+            padding: 8px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 8px 12px;
+            background-color: #333333;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:disabled {
+                opacity: 0.4;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    &__error {
+        display: block;
+        margin-top: 6px;
+        color: #e74c3c;
+        font-size: 12px;
+    }
+}
+
+.shape--circle {
+    border-radius: 50%;
+}
+
+.shape--rounded {
+    border-radius: 20%;
+}
+
+.shape--square {
+    border-radius: 0;
+}
